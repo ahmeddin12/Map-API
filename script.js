@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 'use strict';
 
 // prettier-ignore
@@ -13,4 +10,14 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
->>>>>>> 8f897c7 (Mapty)
+
+navigator.geolocation.getCurrentPosition(
+  function (position) {
+    const { latitude } = position.coords;
+    const { longitude } = position.coords;
+    console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+  },
+  function () {
+    alert('Could not get your position');
+  }
+);
